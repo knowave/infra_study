@@ -1,2 +1,5 @@
-import express, { Express, Request, Response, Application } from "express";
-import dotenv from "dotenv";
+import App from "./app";
+
+const app = new App();
+
+app.listen();
