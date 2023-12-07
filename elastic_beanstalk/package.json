@@ -2,7 +2,13 @@
   "name": "infra_test",
   "version": "1.0.0",
   "main": "src/app.ts",
-  "author": "Taemin <kwaktaemin98@gmail.com>",
+  "scripts": {
+    "build": "yarn tsc --build",
+    "dev": "nodemon --exec ts-node --files src/index.ts",
+    "start": "node src/index.ts"
+  },
+  "repository": "https://github.com/knowave/infra_study",
+  "author": "knowave <kwaktaemin98@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "dotenv": "^16.3.1",
