@@ -25,7 +25,7 @@ jobs:
         id: build-image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: chopsticks-dev
+          ECR_REPOSITORY: test-dev
           IMAGE_TAG: latest
         run: |
           docker buildx build -f Dockerfile.development --platform=linux/amd64 -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
@@ -52,9 +52,9 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
-          application_name: chopsticks-development
-          environment_name: Chopsticks-development-env
-          version_label: chopsticks-dev-docker-${{steps.current-time.outputs.formattedTime}}
+          application_name: test-development
+          environment_name: test-development-env
+          version_label: test-dev-docker-${{steps.current-time.outputs.formattedTime}}
           region: ap-northeast-2
           deployment_package: deploy/deploy.zip
           wait_for_environment_recovery: 200

@@ -24,6 +24,6 @@ COPY --from=builder /app/package-lock.json ./package-lock.json
 COPY --from=builder /app/migration_data.json ./migration_data.json
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/chopsticks-248516-firebase-adminsdk-iartf-f3b5aeb1ff.json ./chopsticks-248516-firebase-adminsdk-iartf-f3b5aeb1ff.json
+COPY --from=builder /app/test-248516-firebase-adminsdk-iartf-f3b5aeb1ff.json ./test-248516-firebase-adminsdk-iartf-f3b5aeb1ff.json
 
 CMD [ "sh", "-c", "npm run start:prod"]
